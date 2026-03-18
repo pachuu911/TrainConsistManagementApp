@@ -5,28 +5,25 @@ public class TrainConsistManagementApp {
     public static void main(String[] args) {
 
         System.out.println("====================================");
-        System.out.println("UC2 - Add Passenger Bogies to Train");
+        System.out.println("UC3 - Track Unique Bogie IDs");
         System.out.println("====================================\n");
 
-        List<String> passengerBogies = new ArrayList<>();
+        Set<String> bogies = new HashSet<>();
 
-        passengerBogies.add("B1");
-        passengerBogies.add("B2");
-        passengerBogies.add("B3");
+        bogies.add("BG101");
+        bogies.add("BG102");
+        bogies.add("BG103");
+        bogies.add("BG104");
 
-        System.out.println("Bogies after addition: " + passengerBogies);
+        bogies.add("BG101");
+        bogies.add("BG102");
 
-        passengerBogies.remove("B2");
+        System.out.println("Unique Bogie IDs in Train:");
 
-        System.out.println("Bogies after removal: " + passengerBogies);
-
-        if (passengerBogies.contains("B1")) {
-            System.out.println("B1 is available in the train.");
-        } else {
-            System.out.println("B1 is not available in the train.");
+        for (String bogie : bogies) {
+            System.out.println(bogie);
         }
 
-        System.out.println("\nFinal Train Consist:");
-        System.out.println(passengerBogies);
+        System.out.println("\nTotal Unique Bogies: " + bogies.size());
     }
 }
