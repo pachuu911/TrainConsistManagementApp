@@ -5,25 +5,30 @@ public class TrainConsistManagementApp {
     public static void main(String[] args) {
 
         System.out.println("====================================");
-        System.out.println("UC3 - Track Unique Bogie IDs");
+        System.out.println("UC4 - Maintain Ordered Bogie Consist");
         System.out.println("====================================\n");
 
-        Set<String> bogies = new HashSet<>();
+        List<String> trainConsist = new LinkedList<>();
 
-        bogies.add("BG101");
-        bogies.add("BG102");
-        bogies.add("BG103");
-        bogies.add("BG104");
+        trainConsist.add("BG101");
+        trainConsist.add("BG102");
+        trainConsist.add("BG103");
 
-        bogies.add("BG101");
-        bogies.add("BG102");
+        System.out.println("Initial Train Consist: " + trainConsist);
 
-        System.out.println("Unique Bogie IDs in Train:");
+        trainConsist.add(1, "BG100");
 
-        for (String bogie : bogies) {
-            System.out.println(bogie);
-        }
+        System.out.println("After inserting BG100 at position 1: " + trainConsist);
 
-        System.out.println("\nTotal Unique Bogies: " + bogies.size());
+        trainConsist.remove(0);
+
+        System.out.println("After removing front bogie: " + trainConsist);
+
+        trainConsist.remove(trainConsist.size() - 1);
+
+        System.out.println("After removing rear bogie: " + trainConsist);
+
+        System.out.println("\nFinal Train Structure:");
+        System.out.println(trainConsist);
     }
 }
