@@ -5,25 +5,22 @@ public class TrainConsistManagementApp {
     public static void main(String[] args) {
 
         System.out.println("====================================");
-        System.out.println("UC5 - Preserve Insertion Order of Bogies");
+        System.out.println("UC6 - Map Bogie to Capacity (HashMap)");
         System.out.println("====================================\n");
 
-        Set<String> formation = new LinkedHashSet<>();
+        Map<String, Integer> capacityMap = new HashMap<>();
 
-        formation.add("BG101");
-        formation.add("BG102");
-        formation.add("BG103");
-        formation.add("BG104");
+        capacityMap.put("BG101", 72);
+        capacityMap.put("BG102", 72);
+        capacityMap.put("BG103", 64);
+        capacityMap.put("BG104", 80);
 
-        formation.add("BG102");
-        formation.add("BG101");
+        System.out.println("Bogie Capacity Details:");
 
-        System.out.println("Final Train Formation:");
-
-        for (String bogie : formation) {
-            System.out.println(bogie);
+        for (Map.Entry<String, Integer> entry : capacityMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue() + " seats");
         }
 
-        System.out.println("\nTotal Bogies: " + formation.size());
+        System.out.println("\nTotal Bogies Mapped: " + capacityMap.size());
     }
 }
